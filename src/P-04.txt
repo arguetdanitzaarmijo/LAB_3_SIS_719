@@ -1,0 +1,62 @@
+ 1. ¿Qué son las funciones flecha?
+    Las funciones flecha son una forma concisa de escribir funciones en JavaScript.
+    Se denominan “flecha” debido a la sintaxis () =>, que se asemeja a una flecha.
+    Proporcionan una alternativa más breve y legible para definir funciones anónimas (sin nombre).
+    Las funciones flecha no tienen su propio contexto de this, lo que las hace útiles en ciertos escenarios.
+
+ 2. Sintaxis de las funciones flecha:
+    La sintaxis básica es: (parámetros) => expresión.
+    Si la función tiene solo una expresión, puedes omitir las llaves {} y la palabra clave return.
+
+ 3. Ventajas de las funciones flecha:
+    Sintaxis más concisa: Reduce la cantidad de código.
+    Herencia léxica de this: El valor de this se hereda del contexto que rodea la función flecha.
+    Útiles en funciones de orden superior y callbacks.
+
+Ejemplos
+//Función con un solo parámetro:
+JavaScript
+
+const saludar = nombre => `¡Hola, ${nombre}!`;
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+
+//Función sin parámetros:
+JavaScript
+
+const obtenerHora = () => new Date().toLocaleTimeString();
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+
+//Función con múltiples parámetros:
+JavaScript
+
+const multiplicar = (a, b) => a * b;
+
+
+
+1. ¿Qué es un callback?
+    Un callback es simplemente una función que se pasa como parámetro a otra función.
+    Se ejecuta después de que ocurra algún evento o se complete una tarea específica.
+    Los callbacks son esenciales para trabajar con operaciones asíncronas en JavaScript.
+2.. ¿Por qué necesitamos callbacks?
+    JavaScript ejecuta el código secuencialmente, pero hay situaciones en las que queremos que ciertas tareas se realicen de forma no secuencial.
+    Por ejemplo, cuando hacemos una solicitud a una API o esperamos un tiempo antes de ejecutar una acción.
+    Los callbacks aseguran que una función no se ejecute antes de que se complete una tarea, sino justo después de que se haya completado.
+
+
+3. Ejemplo:
+
+Retraso en la ejecución
+Imagina que queremos mostrar un mensaje en la consola después de 3 segundos.
+Utilizamos el método incorporado setTimeout, que llama a una función o evalúa una expresión después de un período de tiempo determinado (en milisegundos).
+Aquí está el código:
+JavaScript
+
+        const mensaje = function() {
+        console.log("Este mensaje se muestra después de 3 segundos");
+        };
+
+        setTimeout(mensaje, 3000); // Llama a la función "mensaje" después de 3 segundos
+
+4.  Ventajas de los callbacks:
+    Nos permiten manejar tareas asíncronas de manera ordenada.
+    Evitan bloqueos y errores al esperar que se complete una operación antes de continuar.
