@@ -1,0 +1,87 @@
+1. 
+El archivo .gitignore es utilizado en proyectos que usan Git para especificar los archivos o directorios que Git debe ignorar y no rastrear. Esto es útil para evitar que archivos no deseados o sensibles se suban al repositorio remoto.
+ Ejemplo  .gitignore: 
+
+# Ignora todos los archivos .log
+*.log
+
+# Ignora el directorio node_modules
+node_modules/
+
+# Ignora el archivo de configuración personal .env
+.env
+
+# Ignora los archivos de compilación
+*.class
+*.o
+*.pyc
+
+# Ignora los directorios de salida de compilación
+/bin/
+/out/
+/target/
+
+# Ignora los archivos de sistema específicos
+.DS_Store
+Thumbs.db
+
+# Ignora los archivos de configuración de IDE
+.idea/
+.vscode/
+
+En este ejemplo, cualquier archivo que termine en .log será ignorado, así como el directorio node_modules y el archivo .env. Los archivos de compilación como .class, .o, y .pyc también son ignorados, junto con los directorios de salida de compilación /bin/, /out/, y /target/. 
+Además, se ignoran los archivos de sistema como .DS_Store y Thumbs.db, y los archivos de configuración de IDE como .idea/ y .vscode/.
+Cada línea del archivo .gitignore especifica un patrón, y Git ignorará los archivos y directorios que coincidan con estos patrones. Los comentarios se pueden añadir usando el símbolo #, y no afectan el comportamiento del archivo .gitignore.
+
+2. 
+El archivo package.json es un archivo fundamental en proyectos de Node.js, ya que define las propiedades del proyecto y sus dependencias.
+
+Ejemplo: package.json
+
+                {
+                "name": "mi-proyecto",
+                "version": "1.0.0",
+                "description": "Un ejemplo simple de package.json",
+                "main": "index.js",
+                "scripts": {
+                    "start": "node index.js",
+                    "test": "echo \"Error: no test specified\" && exit 1"
+                },
+                "author": "Tu Nombre",
+                "license": "ISC",
+                "dependencies": {
+                    "express": "^4.17.1"
+                },
+                "devDependencies": {
+                    "nodemon": "^2.0.7"
+                }
+                }
+
+
+
+
+name: Es el nombre de tu proyecto.
+version: La versión actual de tu proyecto siguiendo semver.
+description: Una breve descripción de tu proyecto.
+main: El punto de entrada principal de tu aplicación.
+scripts: Comandos personalizados que puedes ejecutar con npm. Por ejemplo, npm start ejecutará node index.js.
+author: El autor del proyecto.
+license: La licencia bajo la cual se distribuye el proyecto.
+dependencies: Las dependencias necesarias para ejecutar el proyecto.
+devDependencies: Las dependencias necesarias solo para el desarrollo del proyecto, como herramientas de testing o compilación.
+
+Cuando ejecutas comandos como npm install, npm consulta este archivo para saber qué paquetes necesita instalar. Además, si alguien más quiere usar tu proyecto, puede clonar tu repositorio y ejecutar npm install, y npm instalará automáticamente todas las dependencias listadas en package.json.
+
+3. 
+
+El archivo .yarn-integrity es generado por Yarn, un gestor de paquetes para proyectos de JavaScript. Este archivo se crea cuando instalas paquetes en tu proyecto y sirve como un registro de integridad para asegurar que las versiones de los paquetes instalados coincidan con las especificadas en tu archivo yarn.lock.
+
+Ejemplo: yarm-integrity
+
+1. Ejecutas el comando yarn install para instalar las dependencias de tu proyecto.
+2. Yarn verifica el archivo package.json para determinar qué paquetes necesita instalar.
+3. Yarn instala los paquetes y genera el archivo yarn.lock, que contiene información detallada sobre las versiones exactas de los paquetes instalados.
+4. Junto con yarn.lock, Yarn crea el archivo .yarn-integrity que contiene metadatos sobre el estado actual de la carpeta node_modules, incluyendo un hash de integridad para cada paquete.
+5. En futuras instalaciones o actualizaciones, Yarn verifica el hash de integridad en .yarn-integrity para asegurarse de que los paquetes no han sido alterados o corrompidos desde la última instalación.
+
+El propósito principal del archivo .yarn-integrity es proporcionar una capa adicional de seguridad y consistencia para el manejo de dependencias en proyectos de JavaScript. Asegura que todos los colaboradores del proyecto estén trabajando con las mismas versiones de los paquetes, lo que ayuda a prevenir problemas de compatibilidad y errores relacionados con diferencias en las dependencias.
